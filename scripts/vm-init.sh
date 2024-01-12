@@ -5,7 +5,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 
 # Installing base packages
 
-sudo apt-get install qemu-guest-agent git dbus-user-session fail2ban -y 
+sudo apt-get install qemu-guest-agent git dbus-user-session fail2ban -y # wip addition https://www.snort.org/ (subject to change) 
 
 # Start qemu-guest-agent
 
@@ -54,6 +54,18 @@ curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh |
 # Install DataDog
 DD_API_KEY=${datadogapikey} DD_SITE=${datadogapisite} DD_APM_INSTRUMENTATION_ENABLED=host bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
 
-# Implement fail2ban wip
+# Implement fail2ban configs wip
 
 # End of implementation
+
+# WIP portainer setup
+docker volume create portainer_data
+docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+# nvm install and init
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# install node with nvm
+nvm install node
