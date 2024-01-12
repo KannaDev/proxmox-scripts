@@ -4,4 +4,4 @@ Generally these are scripts that *should* be able to be used with anything using
 
 ## vm-init.sh
 
-This script has the purpose of being used for updating a system that has just booted, installing some basic packages such as Docker. and then asking for the API keys for services which I use. While it may be pointless running both NewRelic and DataDog, it's what works for me.
+This script has the purpose of being used for updating a system that has just booted, installing some basic packages such as Docker, nvm for NodeJS and installing latest, Portainer, and more. and then asking for the API keys for services which I use (plans to change to just configuration files to simplify installing on multiple hosts without needing to grab them each time). While it may be pointless running both NewRelic and DataDog, it's what works for me.
