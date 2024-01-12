@@ -5,7 +5,7 @@ sudo apt-get update && sudo apt-get dist-upgrade -y
 
 # Installing base packages
 
-sudo apt-get install qemu-guest-agent git dbus-user-session -y 
+sudo apt-get install qemu-guest-agent git dbus-user-session fail2ban -y 
 
 # Start qemu-guest-agent
 
@@ -53,3 +53,7 @@ curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh |
 
 # Install DataDog
 DD_API_KEY=${datadogapikey} DD_SITE=${datadogapisite} DD_APM_INSTRUMENTATION_ENABLED=host bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script_agent7.sh)"
+
+# Implement fail2ban wip
+
+# End of implementation
